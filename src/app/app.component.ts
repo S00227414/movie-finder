@@ -8,7 +8,7 @@ import { OmdbApiService } from './services/omdb-api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'movie-finder';
+  title = 'Movie Finder';
   movieData:IOMDBResponse | undefined;
   errorMessage: any;
 
@@ -18,8 +18,8 @@ export class AppComponent {
     this._omdbService.getMovieData(movieName).subscribe(
       movieData => {
 
-        this.movieData=this.movieData;
-        console.log("Director name : " + this.movieData?.Director);
+        this.movieData=movieData;
+        console.log(this.movieData);
       }
     )
     return false;
